@@ -376,6 +376,17 @@ footer .attribution .creator {
       flex-wrap: wrap;
 }
 
+.main_content .contactForm label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .main_content .contactForm input {
   width: 100%;
   margin-top: 20px;
@@ -388,15 +399,15 @@ footer .attribution .creator {
   transition: border-color 600ms ease-in-out;
 }
 
-.main_content .contactForm input:nth-child(1) {
+.main_content .contactForm input:nth-of-type(1) {
   border: 2px solid #8CBF3F;
 }
 
-.main_content .contactForm input:nth-child(2) {
+.main_content .contactForm input:nth-of-type(2) {
   border: 2px solid #F2CC0F;
 }
 
-.main_content .contactForm input:nth-child(3) {
+.main_content .contactForm input:nth-of-type(3) {
   border: 2px solid #9453A6;
 }
 

@@ -410,6 +410,24 @@ footer .attribution .creator {
   font-size: 1rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .col_sponsor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .col_sponsor .sponsor {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    width: 100%;
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .col_sponsor {
     padding: 0;
@@ -417,7 +435,13 @@ footer .attribution .creator {
   }
   .col_sponsor .sponsor {
     width: 100%;
-    height: auto;
+    -webkit-transform: scale(0) rotate(360deg);
+            transform: scale(0) rotate(360deg);
+    opacity: 0;
+    -webkit-transition: opacity 1200ms ease-in-out, -webkit-transform 1000ms ease-in-out;
+    transition: opacity 1200ms ease-in-out, -webkit-transform 1000ms ease-in-out;
+    transition: transform 1000ms ease-in-out, opacity 1200ms ease-in-out;
+    transition: transform 1000ms ease-in-out, opacity 1200ms ease-in-out, -webkit-transform 1000ms ease-in-out;
   }
   .col_sponsor .sponsor .sponsor_name {
     font-size: 1.5vw;
@@ -430,13 +454,6 @@ footer .attribution .creator {
 
 @media only screen and (min-width: 1600px) {
   .col_sponsor .sponsor {
-    -webkit-transform: scale(0) rotate(360deg);
-            transform: scale(0) rotate(360deg);
-    opacity: 0;
-    -webkit-transition: opacity 1200ms ease-in-out, -webkit-transform 1000ms ease-in-out;
-    transition: opacity 1200ms ease-in-out, -webkit-transform 1000ms ease-in-out;
-    transition: transform 1000ms ease-in-out, opacity 1200ms ease-in-out;
-    transition: transform 1000ms ease-in-out, opacity 1200ms ease-in-out, -webkit-transform 1000ms ease-in-out;
     width: 90%;
   }
   .col_sponsor .sponsor .sponsor_name {

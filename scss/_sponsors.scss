@@ -1,7 +1,6 @@
 .col_sponsor {
 
     .sponsor {
-
         width: 95%;
         max-width: 350px;
         height: 90%;
@@ -58,14 +57,30 @@
 }
 
 // Medium Screens
+@media only screen and (min-width: $breakpoint_medium) {
+    .col_sponsor {
+        display: flex;
+        flex-direction: column;
+
+        .sponsor {
+            flex-grow: 1;
+            width: 100%;
+        }
+    }
+}
+
+// Large Screens
 @media only screen and (min-width: $breakpoint_large) {
     .col_sponsor {
         padding: 0;
         margin: 0;
 
+
         .sponsor {
             width: 100%;
-            height: auto;
+            transform: scale(0) rotate(360deg);
+            opacity: 0;
+            transition: transform 1000ms ease-in-out, opacity 1200ms ease-in-out;
 
             .sponsor_name {
                 font-size: 1.5vw;
@@ -79,13 +94,11 @@
     }
 }
 
-// Large Screens
+// Extra Large Screens
 @media only screen and (min-width: $breakpoint_xlarge) {
     .col_sponsor {
         .sponsor {
-            transform: scale(0) rotate(360deg);
-            opacity: 0;
-            transition: transform 1000ms ease-in-out, opacity 1200ms ease-in-out;
+
 
             width: 90%;
 
