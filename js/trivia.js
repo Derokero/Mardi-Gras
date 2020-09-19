@@ -6,7 +6,11 @@
         // Validate required fields
         for (let i = 0; i < correctAnswers.length; i++) {
             const answer = document.getElementById("q" + i + "a0");
-            if (!answer.reportValidity()) return false; // Terminate on bad validity check (user didn't answer all questions)
+            if (!answer.reportValidity()) {
+                setTimeout(() => answer.reportValidity(), 1000); // Display message after scroll
+                return false; // Terminate on bad validity check (user didn't answer all questions)
+
+            }
         }
 
         // Select all radio buttons
