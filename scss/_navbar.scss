@@ -1,0 +1,159 @@
+ul {
+    list-style-type: none;
+
+    li {
+        a:focus {
+            outline: $mardiBlack dashed;
+        }
+
+        a:active,
+        a:hover {
+            outline: none;
+        }
+    }
+}
+
+// Mobile Navbar //
+@media only screen and (max-width: 767.98px) {
+    .navbar {
+        $menuHeight: 50px;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        font-family: 'Pattaya', sans-serif;
+        font-size: 2rem;
+
+        .hamburger {
+            width: 100%;
+            height: $menuHeight;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 5px;
+            background-image: linear-gradient(40deg, $mardiGreen, $mardiYellow, $mardiPurple);
+
+            z-index: 2;
+
+            img {
+                height: 100%;
+            }
+
+            // For testing, managed by JS now
+
+            // &:hover+ul>li {
+            // visibility: visible;
+            // margin: 0;
+            // opacity: 0.95;
+            // }
+        }
+
+        ul {
+            position: absolute;
+            width: 100%;
+            height: $menuHeight;
+            top: $menuHeight;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            li {
+                height: 100%;
+                text-decoration: none;
+
+                /* Menu Items */
+                &:first-child {
+                    border-top: 2px solid $mardiBlack;
+                }
+
+                visibility: hidden;
+                text-align: center;
+
+                background-image: linear-gradient(90deg, $mardiGreen, $mardiPurple, $mardiYellow);
+                border-bottom: 2px solid $mardiBlack;
+                text-shadow: 2px 2px 3px $mardiBlack;
+                margin-top: -$menuHeight;
+                opacity: 0;
+                z-index: 1;
+
+                transition-timing-function: ease-in-out;
+                transition-duration: 350ms;
+                transition-property: margin-top,
+                opacity,
+                visibility;
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    color: $mardiYellow;
+                }
+            }
+
+        }
+    }
+}
+
+// Dekstop Navbar //
+@media (min-width: 768px) {
+    .navbar {
+        $menuHeight: 45px;
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        width: 80%;
+
+        font-family: 'Pattaya', sans-serif;
+        font-size: 2rem;
+
+        .hamburger {
+            display: none;
+        }
+
+        ul {
+            width: 100%;
+            height: $menuHeight;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            border-radius: 20px;
+            // background-color: $mardiGreen;
+            background-image: repeating-linear-gradient(90deg, $mardiGreen, $mardiYellow, $mardiPurple, $mardiGreen, $mardiYellow, $mardiPurple);
+
+            box-shadow: 2px 2px 5px $mardiBlack;
+
+            li {
+                height: 100%;
+
+                text-align: center;
+                flex-grow: 1;
+
+                /* Menu Items */
+                &:first-child {
+                    border-left: 0;
+                }
+
+                border-left: 2px solid $mardiPurple;
+                text-shadow: 2px 2px 3px $mardiBlack;
+
+                transition: text-shadow 250ms ease-in-out;
+
+                &:hover {
+                    text-shadow: 5px 5px 4px $mardiBlack;
+                }
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    color: $mardiYellow;
+                }
+
+            }
+        }
+    }
+}

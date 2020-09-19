@@ -1,0 +1,101 @@
+.col_sponsor {
+
+    .sponsor {
+
+        width: 95%;
+        max-width: 350px;
+        height: 90%;
+        text-align: center;
+        margin: 40px auto;
+        overflow: hidden;
+        border: 2px solid $mardiPurple;
+        border-radius: 20px;
+        box-shadow: 4px 4px 10px $mardiBlack;
+        background-color: $mardiGrey;
+
+        cursor: pointer;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .sponsor_img {
+            transform-origin: top left;
+            transform: skewY(-5deg);
+            border-bottom: 2px solid $mardiPurple;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                max-height: 200px;
+                object-fit: cover;
+                transform: skewY(5deg);
+                transform-origin: inherit;
+            }
+        }
+
+        .sponsor_name {
+            padding: 20px 10px;
+            font-family: 'Pattaya', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        hr {
+            width: 90%;
+            border: 1px solid $mardiPurple;
+            margin: auto;
+        }
+
+        .sponsor_content {
+            padding: 20px;
+            text-align: justify;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+    }
+
+}
+
+// Medium Screens
+@media only screen and (min-width: $breakpoint_large) {
+    .col_sponsor {
+        padding: 0;
+        margin: 0;
+
+        .sponsor {
+            width: 100%;
+            height: auto;
+
+            .sponsor_name {
+                font-size: 1.5vw;
+            }
+
+            .sponsor_content {
+                line-height: 1.4;
+                font-size: 1vw;
+            }
+        }
+    }
+}
+
+// Large Screens
+@media only screen and (min-width: $breakpoint_xlarge) {
+    .col_sponsor {
+        .sponsor {
+            transform: scale(0) rotate(360deg);
+            opacity: 0;
+            transition: transform 1000ms ease-in-out, opacity 1200ms ease-in-out;
+
+            width: 90%;
+
+            .sponsor_name {
+                font-size: 1.5rem;
+            }
+
+            .sponsor_content {
+                font-size: 1rem;
+            }
+        }
+    }
+}

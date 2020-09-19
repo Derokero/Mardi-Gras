@@ -1,0 +1,7 @@
+// Mixins //
+
+// Mardi Gras themed border
+@mixin mardi-border($width) {
+    border: $width solid #000;
+    border-image: linear-gradient(0deg, $mardiGreen, $mardiYellow, $mardiPurple) 2;
+}

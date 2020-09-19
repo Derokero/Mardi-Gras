@@ -1,0 +1,93 @@
+@import "general"; // General colors, fonts, navbar, breakpoints
+
+.main_content {
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+
+    .contactForm {
+        grid-column: 2/3;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+
+        input {
+            width: 100%;
+            margin-top: 20px;
+            padding: 5px;
+
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 2px 2px 5px #aaa;
+
+
+            transition: border-color 600ms ease-in-out;
+
+            &:nth-child(1) {
+                border: 2px solid $mardiGreen;
+            }
+
+            &:nth-child(2) {
+                border: 2px solid $mardiYellow;
+            }
+
+            &:nth-child(3) {
+                border: 2px solid $mardiPurple;
+            }
+
+            &:invalid {
+                border-bottom-color: rgb(220, 0, 0);
+            }
+        }
+
+        #textArea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 20px;
+            outline: inherit;
+            box-shadow: 2px 2px 5px #aaa;
+            resize: none;
+            @include mardi_border(2px);
+
+            &:invalid {
+                border-color: rgb(220, 0, 0);
+            }
+        }
+
+        #submitBtn {
+            width: 90%;
+            height: 50px;
+            margin: auto;
+            margin-top: 20px;
+
+            border: 2px solid $mardiPurple;
+            background-color: saturate($mardiGreen, 10);
+            transition: background-color 200ms ease-in-out;
+
+
+            &:hover {
+                background-color: saturate($mardiGreen, 55);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpoint_medium) {
+    .main_content {
+        grid-template-columns: 20% auto 20%;
+
+        .contactForm {
+
+            input {
+                width: 30%;
+            }
+
+            #submitBtn {
+                width: 60%;
+                height: 40px;
+            }
+        }
+    }
+}

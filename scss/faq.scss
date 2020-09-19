@@ -1,0 +1,75 @@
+@import "general"; // General colors, fonts, navbar, breakpoints
+
+
+.main_content {
+    a {
+        color: $mardiPurple;
+        text-decoration: underline $mardiGreen;
+    }
+
+    .pre_content {
+        p {
+            font-size: 1rem;
+            text-align: justify;
+        }
+    }
+
+    #accordion {
+
+        .card {
+            border-color: $mardiGreen;
+        }
+
+        .card-header {
+            padding: 0;
+            text-align: center;
+
+            button {
+                width: 100%;
+                color: $mardiPurple;
+                font-family: 'Pattaya',
+                    sans-serif;
+                font-size: 1.5rem;
+                box-shadow: none;
+                text-decoration: none;
+            }
+        }
+
+        .collapse.show,
+        .collapsing {
+            border-top: 1px solid #000;
+            border-image: linear-gradient(90deg, $mardiGreen, $mardiYellow, $mardiPurple) 2;
+        }
+    }
+
+    .card-body {
+        border-top: 0;
+        text-align: justify;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $breakpoint_medium) {
+    .main_content {
+        display: grid;
+        grid-template-columns: auto 60% auto;
+
+        .col {
+            grid-column: 2/3;
+        }
+
+        #accordion {
+            .card-header {
+                padding: 10px;
+
+                button {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

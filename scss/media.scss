@@ -1,0 +1,78 @@
+@import "general"; // General colors, fonts, navbar, breakpoints
+
+.main_content {
+    .gallery {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        a {
+            display: block;
+            margin: 2vw;
+            border: 2px solid $mardiPurple;
+            border-radius: 1rem;
+            box-shadow: 3px 3px 5px $mardiBlack;
+            overflow: hidden;
+
+            width: 40vw;
+            height: 40vw;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .videos {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        grid-column: 2/3;
+
+        iframe {
+            width: 85vw;
+            height: 50vh;
+            margin-bottom: 10vh;
+            border: 2px solid $mardiPurple;
+            border-radius: 1rem;
+            box-shadow: 3px 3px 5px $mardiBlack;
+            overflow: hidden;
+        }
+    }
+
+}
+
+@media only screen and (min-width: $breakpoint_medium) {
+    .main_content {
+        display: grid;
+        grid-template-columns: auto 80% auto;
+
+        .gallery {
+            grid-column: 2/3;
+
+            a {
+                width: 20vw;
+                height: 20vw;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .videos {
+            iframe {
+                width: 60vw;
+                height: 40vw;
+                margin: 2vw;
+            }
+        }
+    }
+}

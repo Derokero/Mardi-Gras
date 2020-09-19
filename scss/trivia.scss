@@ -1,0 +1,144 @@
+@import "general"; // General colors, fonts, navbar, breakpoints
+
+
+.main_content {
+    #triviaContent {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            width: 90%;
+            align-self: center;
+            position: relative;
+            border: 1px solid $mardiGreen;
+            background-color: $mardiGrey;
+            margin-top: 20vw;
+            box-shadow: 2px 2px 5px $mardiBlack;
+
+            h3 {
+                margin: 0 auto;
+                margin-top: -5vw;
+                margin-bottom: 5vw;
+                width: 80%;
+                padding: 2vw;
+                font-family: 'Pattaya', sans-serif;
+                font-size: 6vw;
+
+                box-shadow: 1px 1px 4px $mardiBlack;
+
+                text-align: center;
+                @include mardi_border(1px);
+
+                color: $mardiPurple;
+                background-color: $mardiGrey;
+            }
+
+            input {
+                position: relative;
+                font-size: 5.5vw;
+                left: 8.2vw;
+                height: 4vw;
+                opacity: 0;
+
+                &:checked+label {
+                    &:before {
+                        content: "◉ ";
+                    }
+                }
+
+            }
+
+            label {
+                cursor: pointer;
+
+                font-family: 'Roboto', sans-serif;
+                font-size: 5.5vw;
+                margin-left: 5%;
+                color: $mardiBlack;
+
+                &:before {
+                    content: "◎ ";
+                }
+
+                &.answered {
+                    &:before {
+                        content: "";
+                    }
+                }
+
+                &.correctAnswer {
+                    color: green;
+
+                    &:before {
+                        content: "✔ ";
+                    }
+                }
+
+                &.incorrectAnswer {
+                    color: crimson;
+
+                    &:before {
+                        content: "✘ ";
+                    }
+                }
+            }
+        }
+
+        #triviaCheck {
+            width: 90%;
+            min-height: 40px;
+            margin: auto;
+            margin-top: 40px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            outline: none;
+            border-radius: 10px;
+            border: 2px solid $mardiPurple;
+            background-color: saturate($mardiGreen, 10);
+            transition: background-color 200ms ease-in-out;
+
+
+            &:hover {
+                background-color: saturate($mardiGreen, 55);
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: $breakpoint_medium) {
+    .main_content {
+        display: grid;
+        grid-template-columns: auto 50% auto;
+
+        .col {
+            grid-column: 2/3;
+        }
+
+        #triviaContent {
+
+            div {
+                margin: 2.2vw;
+
+                h3 {
+                    font-size: 2rem;
+                    margin-bottom: 10px;
+                    margin-top: -3vw;
+                    padding: 20px;
+                }
+
+                input {
+                    position: relative;
+                    left: 3vw;
+                    height: 1vw;
+                }
+
+                label {
+                    font-size: 1.5rem;
+                }
+            }
+
+        }
+    }
+}
